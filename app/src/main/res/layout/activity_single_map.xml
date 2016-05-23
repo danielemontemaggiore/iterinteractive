@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+
+    <ImageView
+        android:id="@+id/image_areas"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/maschera1"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/percorso1"
+        />
+
+    <ImageView
+        android:id="@+id/track"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tracciato1"
+        />
+
+    <ImageView
+        android:id="@+id/polene"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/polene"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/time_remaining"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-10dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        />
+
+
+</FrameLayout>

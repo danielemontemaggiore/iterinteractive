@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Discover Palermo</string>
+
+    <string name="free_tour">FREE TOUR</string>
+    <string name="discover">DISCOVERY</string>
+    <string name="choose_mode">Scegli la modalita\'</string>
+    <string name="choose_hours">Seleziona le ore</string>
+    <string name="choose_lang">Scegli la lingua</string>
+    <string name="benvenuto">Benvenuto |</string>
+    <string name="welcome">Welcome |</string>
+    <string name="bienvenue">Bienvenue |</string>
+    <string name="wilkomme">Wilkomme |</string>
+    <string name="bienvenida">Bienvenida |</string>
+    <string name="yokkoso">Yokkoso</string>
+    <string name="two">2</string>
+    <string name="four">4</string>
+    <string name="time_finished1">Hai già raggiunto la destinazione? Affrettati! Hai solo </string>
+    <string name="time_finished2"> minuti per raggiungere la destinazione..</string>
+    <string name="time_finished3">Il tempo per visitare il monumento a tua disposizione è terminato.\nClicca sulla bussola in alto a destra per dirigerti al prossimo monumento</string>
+    <string name="title_activity_choose_mode">ChooseModeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+
+    <string name="title_activity_discovery">DiscoveryActivity</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_choose_hours">ChooseHoursActivity</string>
+
+    <string name="title_activity_single_map">SingleMapActivity</string>
+</resources>

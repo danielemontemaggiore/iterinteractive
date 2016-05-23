@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Discover Palermo</string>
+
+    <string name="free_tour">FREE TOUR</string>
+    <string name="discover">DISCOVERY</string>
+    <string name="choose_mode">Choose mode</string>
+    <string name="choose_hours">Select ours</string>
+    <string name="choose_lang">Choose language</string>
+    <string name="benvenuto">Benvenuto |</string>
+    <string name="welcome">Welcome |</string>
+    <string name="bienvenue">Bienvenue |</string>
+    <string name="wilkomme">Wilkomme |</string>
+    <string name="bienvenida">Bienvenida |</string>
+    <string name="yokkoso">Yokkoso</string>
+    <string name="two">2</string>
+    <string name="four">4</string>
+
+
+    <string name="title_activity_choose_mode">ChooseModeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+
+    <string name="title_activity_discovery">DiscoveryActivity</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_choose_hours">ChooseHoursActivity</string>
+
+    <string name="title_activity_single_map">SingleMapActivity</string>
+</resources>

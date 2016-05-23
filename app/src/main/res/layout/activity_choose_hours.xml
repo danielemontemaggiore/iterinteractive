@@ -1,0 +1,54 @@
+<LinearLayout
+    android:id="@+id/popup_element"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EE000000"
+    android:orientation="vertical"
+    tools:context=".ChooseModeActivity"
+    >
+
+    <TextView
+        android:id="@+id/select_time"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/choose_hours"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/hours_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_two_hrs"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/button"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:text="@string/two" />
+
+        <Button
+            android:id="@+id/btn_four_hrs"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/button"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:text="@string/four" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
