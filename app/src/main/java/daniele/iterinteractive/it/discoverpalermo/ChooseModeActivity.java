@@ -1,7 +1,5 @@
 package daniele.iterinteractive.it.discoverpalermo;
 
-import daniele.iterinteractive.it.discoverpalermo.util.LanguageHelper;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -73,7 +71,7 @@ public class ChooseModeActivity extends Activity {
 
     private View.OnClickListener time_button_click_listener = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent viewMapIntent = new Intent(ChooseModeActivity.this, FirstMapActivity.class);
+            Intent viewMapIntent = new Intent(ChooseModeActivity.this, Tappa1Activity.class);
             switch (v.getId()) {
                 case R.id.btn_two_hrs:
                     // TODO : Devo aggiungere un "putextra" per passare anche il numero delle ore (2)

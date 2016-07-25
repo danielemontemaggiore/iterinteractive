@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/maschera1"
+        android:src="@drawable/sensibili1"
         android:visibility="invisible"
         />
 
@@ -19,7 +19,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter"
-        android:src="@drawable/percorso1"
+        android:src="@drawable/mappa1"
         />
 
     <ImageView

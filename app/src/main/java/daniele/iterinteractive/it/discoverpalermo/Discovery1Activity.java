@@ -2,6 +2,7 @@ package daniele.iterinteractive.it.discoverpalermo;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.ColorInt;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -64,6 +66,11 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         msg2= getResources().getString(R.string.time_finished2);
         msg3= getResources().getString(R.string.time_finished3);
 
+
+
+        Dialog dialog = new Dialog(new ContextThemeWrapper(this, R.style.DialogSlideAnim));
+        dialog.setTitle("Title...");
+
         ImageView iv = (ImageView) findViewById (R.id.image);
         if (iv != null) {
             iv.setOnTouchListener (this);
@@ -83,6 +90,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         {
             i++;
             initiatePopupWindow(i);
+
         }
 
         @Override

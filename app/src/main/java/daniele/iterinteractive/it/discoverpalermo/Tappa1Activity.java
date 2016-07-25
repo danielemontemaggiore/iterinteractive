@@ -22,14 +22,14 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstMapActivity extends Activity implements View.OnTouchListener
+public class Tappa1Activity extends Activity implements View.OnTouchListener
 {
     // TRAGITTO PORTO -> POLITEAMA : DURATA 11 MINUTI - 2 MINUTI DI PREAVVISO = 9 MINUTI
-    private FirstMapActivity.MalibuCountDownTimer countDownTimer;
+    private Tappa1Activity.MalibuCountDownTimer countDownTimer;
 
-    private final long startTime = 20000; // TODO :  DA CORREGGERE CON 9000000
+    private final long startTime = 20000;       // TODO :  DA CORREGGERE CON 9000000
     private final long interval = 1000;
-    private final long notice = 5000;     // TODO : DA CORREGGERE CON 3000000
+    private final long notice = 5000;           // TODO : DA CORREGGERE CON 3000000
     private int i=0;
     private TextView time_remaining;
 
@@ -37,10 +37,10 @@ public class FirstMapActivity extends Activity implements View.OnTouchListener
     Button btnClose;
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_map);
+        setContentView(R.layout.activity_tappa1);
 
         time_remaining = (TextView) findViewById(R.id.time_remaining);
-        countDownTimer = new FirstMapActivity.MalibuCountDownTimer(startTime-notice, interval);
+        countDownTimer = new Tappa1Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
 
         ImageView iv = (ImageView) findViewById (R.id.image);
@@ -76,7 +76,7 @@ public class FirstMapActivity extends Activity implements View.OnTouchListener
     private void initiatePopupWindow(int j) {
         try {
 
-            LayoutInflater inflater = (LayoutInflater) FirstMapActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) Tappa1Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_time_finished,(ViewGroup) findViewById(R.id.popup_element));
             pwindo = new PopupWindow(layout, 900, 400, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
@@ -101,7 +101,7 @@ public class FirstMapActivity extends Activity implements View.OnTouchListener
                         case 1:
                             pwindo.dismiss();
                             //toast(Integer.toString(finalI));
-                            countDownTimer = new FirstMapActivity.MalibuCountDownTimer(notice, interval);
+                            countDownTimer = new Tappa1Activity.MalibuCountDownTimer(notice, interval);
                             countDownTimer.start();
                             break;
                         case 2:
@@ -171,8 +171,14 @@ public class FirstMapActivity extends Activity implements View.OnTouchListener
                 if (ct.closeMatch (Color.RED, touchColor, tolerance)) {
                     //nextImage = R.drawable.mappa1;
                     //toast("Hai cliccato sul Teatro Politeama");
-                    Intent viewDetailIntent = new Intent(FirstMapActivity.this, Discovery1Activity.class);
-                    FirstMapActivity.this.startActivity(viewDetailIntent);
+                    Intent viewDetailIntent = new Intent(Tappa1Activity.this, Discovery1Activity.class);
+                    Tappa1Activity.this.startActivity(viewDetailIntent);
+                }
+                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) {
+                    //nextImage = R.drawable.mappa1;
+                    toast("Hai cliccato sul Teatro Biondo");
+                    //Intent viewDetailIntent = new Intent(Tappa1Activity.this, Discovery1Activity.class);
+                    //Tappa1Activity.this.startActivity(viewDetailIntent);
                 }
                 else
                     toast("Non Hai cliccato sul Teatro Politeama");

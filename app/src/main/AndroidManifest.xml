@@ -28,14 +28,7 @@
             android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
-            android:name=".DiscoveryActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_discovery"
-            android:screenOrientation="landscape"
-            android:theme="@style/FullscreenTheme" >
-        </activity>
-        <activity
-            android:name=".FirstMapActivity"
+            android:name=".Tappa1Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_single_map"
             android:screenOrientation="landscape"
