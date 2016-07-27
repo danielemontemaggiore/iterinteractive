@@ -32,19 +32,19 @@ public class MainActivity extends Activity {
         editor = getSharedPreferences("preferences", MODE_PRIVATE).edit();
 
 
-        Typeface pirateFonts = Typeface.createFromAsset(getAssets(), "fonts/Treamd.ttf");
+        Typeface Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         benvenuto = (TextView) findViewById(R.id.benvenuto);
-        benvenuto.setTypeface(pirateFonts);
+        benvenuto.setTypeface(Windlass);
         welcome = (TextView) findViewById(R.id.welcome);
-        welcome.setTypeface(pirateFonts);
+        welcome.setTypeface(Windlass);
         bienvenue = (TextView) findViewById(R.id.bienvenue);
-        bienvenue.setTypeface(pirateFonts);
+        bienvenue.setTypeface(Windlass);
         wilkomme = (TextView) findViewById(R.id.wilkomme);
-        wilkomme.setTypeface(pirateFonts);
+        wilkomme.setTypeface(Windlass);
         bienvenida = (TextView) findViewById(R.id.bienvenida);
-        bienvenida.setTypeface(pirateFonts);
+        bienvenida.setTypeface(Windlass);
         yokkoso = (TextView) findViewById(R.id.yokkoso);
-        yokkoso.setTypeface(pirateFonts);
+        yokkoso.setTypeface(Windlass);
         france_flag = (ImageView) findViewById(R.id.france_flag);
         germany_flag = (ImageView) findViewById(R.id.germany_flag);
         italia_flag = (ImageView) findViewById(R.id.italia_flag);

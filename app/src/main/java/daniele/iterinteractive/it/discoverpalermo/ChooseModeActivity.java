@@ -17,11 +17,11 @@ import android.widget.TextView;
 
 public class ChooseModeActivity extends Activity {
 
-    TextView string_choose;
+    TextView string_choose, chooseMode;
     LinearLayout free_tour_layout, discovery_layout;
     private PopupWindow pwindo;
     Button btnTwoHours, btnFourHours;
-    Typeface pirateFonts;
+    Typeface Windlass;
     SharedPreferences prefs;
     String language;
 
@@ -41,8 +41,11 @@ public class ChooseModeActivity extends Activity {
 
         Language.setLocaleIt(ChooseModeActivity.this);
         string_choose = (TextView) findViewById(R.id.chooseMode);
-        pirateFonts = Typeface.createFromAsset(getAssets(), "fonts/Treamd.ttf");
-        string_choose.setTypeface(pirateFonts);
+        chooseMode = (TextView) findViewById(R.id.chooseMode);
+
+        Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
+        string_choose.setTypeface(Windlass);
+        chooseMode.setTypeface(Windlass);
         free_tour_layout = (LinearLayout) findViewById(R.id.free_tour_layout);
         discovery_layout = (LinearLayout) findViewById(R.id.discovery_layout);
         free_tour_layout.setOnClickListener(onClickListener);
@@ -56,9 +59,12 @@ public class ChooseModeActivity extends Activity {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_choose_hours,
                     (ViewGroup) findViewById(R.id.popup_element));
-            pwindo = new PopupWindow(layout, 900, 400, true);
+            pwindo = new PopupWindow(layout, 500, 300, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
+
+            TextView select_time = (TextView) findViewById(R.id.select_time);
+            select_time.setTypeface(Windlass);
             btnTwoHours = (Button) layout.findViewById(R.id.btn_two_hrs);
             btnFourHours = (Button) layout.findViewById(R.id.btn_four_hrs);
             btnTwoHours.setOnClickListener(time_button_click_listener);

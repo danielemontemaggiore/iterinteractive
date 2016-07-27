@@ -8,80 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/welcome_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
-
-        <TextView
-            android:id="@+id/benvenuto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/benvenuto"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/welcome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/bienvenue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bienvenue"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/wilkomme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/wilkomme"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/bienvenida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bienvenida"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/yokkoso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/yokkoso"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_horizontal" />
-
-    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/flag_layout"
@@ -92,25 +18,87 @@
             android:layout_marginTop="100dp"
         >
 
-            <ImageView
-                android:id="@+id/italia_flag"
-                android:layout_width="280dp"
-                android:layout_height="140dp"
-                android:src="@drawable/italia" />
+            <LinearLayout
+                android:id="@+id/benvenuto_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
 
-            <ImageView
-                android:id="@+id/uk_flag"
-                android:layout_width="280dp"
-                android:layout_height="140dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/uk" />
+                <ImageView
+                    android:id="@+id/italia_flag"
+                    android:layout_width="280dp"
+                    android:layout_height="140dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/italia" />
 
-            <ImageView
-                android:id="@+id/france_flag"
-                android:layout_width="280dp"
-                android:layout_height="140dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/france" />
+                <TextView
+                    android:id="@+id/benvenuto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/benvenuto"
+                    android:textColor="@color/black"
+                    android:textSize="40sp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/welcome_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/uk_flag"
+                    android:layout_width="280dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/uk" />
+
+                <TextView
+                    android:id="@+id/welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome"
+                    android:textColor="@color/black"
+                    android:textSize="40sp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bienvenue_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/france_flag"
+                    android:layout_width="280dp"
+                    android:layout_height="140dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="60dp"
+                    android:src="@drawable/france" />
+
+                <TextView
+                    android:id="@+id/bienvenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/benvenuto"
+                    android:textColor="@color/black"
+                    android:textSize="40sp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal" />
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
@@ -120,32 +108,92 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         >
 
-        <ImageView
-            android:id="@+id/germany_flag"
-            android:layout_width="260dp"
-            android:layout_height="125dp"
-            android:src="@drawable/germany" />
+        <LinearLayout
+            android:id="@+id/wilkomme_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
-        <ImageView
-            android:id="@+id/nippon_flag"
-            android:layout_width="260dp"
-            android:layout_height="125dp"
-            android:layout_marginLeft="40dp"
-            android:src="@drawable/nippon" />
+            <ImageView
+                android:id="@+id/germany_flag"
+                android:layout_width="280dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/germany" />
 
-        <ImageView
-            android:id="@+id/spain_flag"
-            android:layout_width="260dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="40dp"
-            android:src="@drawable/spain" />
+            <TextView
+                android:id="@+id/wilkomme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wilkomme"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/yokkoso_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/nippon_flag"
+                android:layout_width="280dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="60dp"
+                android:src="@drawable/nippon" />
+
+
+
+            <TextView
+                android:id="@+id/yokkoso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yokkoso"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bienvenida_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/spain_flag"
+                android:layout_width="280dp"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="60dp"
+                android:src="@drawable/spain" />
+
+            <TextView
+                android:id="@+id/bienvenida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bienvenida"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

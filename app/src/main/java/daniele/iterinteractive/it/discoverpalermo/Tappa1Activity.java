@@ -2,10 +2,13 @@ package daniele.iterinteractive.it.discoverpalermo;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -14,8 +17,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,13 +37,15 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
     private final long notice = 5000;           // TODO : DA CORREGGERE CON 3000000
     private int i=0;
     private TextView time_remaining;
+    private Typeface Windlass;
 
     private PopupWindow pwindo;
-    Button btnClose;
+    LinearLayout btnClose;
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tappa1);
 
+        Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         time_remaining = (TextView) findViewById(R.id.time_remaining);
         countDownTimer = new Tappa1Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
@@ -68,6 +75,7 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
         @Override
         public void onTick(long millisUntilFinished)
         {
+            time_remaining.setTypeface(Windlass);
             time_remaining.setText("" + TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) +" : " + (TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)%60));
 
         }
@@ -78,19 +86,18 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
 
             LayoutInflater inflater = (LayoutInflater) Tappa1Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_time_finished,(ViewGroup) findViewById(R.id.popup_element));
-            pwindo = new PopupWindow(layout, 900, 400, true);
+            pwindo = new PopupWindow(layout, 500, 300, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
-            btnClose = (Button) layout.findViewById(R.id.btn_close);
+            btnClose = (LinearLayout) layout.findViewById(R.id.popup_element);
             TextView timeFinished = (TextView) layout.findViewById(R.id.select_time);
+            timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
-                    timeFinished.setText("Hai già raggiunto la destinazione? Affrettati! Hai solo 3 minuti per raggiungere la destinazione..");
+                    timeFinished.setText(getResources().getString(R.string.raggiunto));
                     break;
                 case 2:
-                    timeFinished.setText("Il tempo di percorrenza a tua disposizione è terminato. Hai già raggiunto il monumento?\n" +
-                            "Se si, clicca sull'icona del monumento, altrimenti ricordati che puoi acquistare le ore \n" +
-                            "extra a fine giornata.");
+                    timeFinished.setText(getResources().getString(R.string.terminato));
                     break;
             }
 
@@ -175,10 +182,12 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
                     Tappa1Activity.this.startActivity(viewDetailIntent);
                 }
                 else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) {
-                    //nextImage = R.drawable.mappa1;
-                    toast("Hai cliccato sul Teatro Biondo");
-                    //Intent viewDetailIntent = new Intent(Tappa1Activity.this, Discovery1Activity.class);
-                    //Tappa1Activity.this.startActivity(viewDetailIntent);
+                    // L'utente ha cliccato sul Kursaal Biondo
+                    openDialog(getResources().getString(R.string.kursaal),getResources().getString(R.string.kursaal_info));
+                }
+                else if (ct.closeMatch (Color.GREEN, touchColor, tolerance)) {
+                    // L'utente ha cliccato sul Kursaal Biondo
+                    openDialog(getResources().getString(R.string.valdese),getResources().getString(R.string.valdese_info));
                 }
                 else
                     toast("Non Hai cliccato sul Teatro Politeama");
@@ -228,6 +237,27 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
     public void toast (String msg)
     {
         Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
+    }
+
+    private void openDialog(String titolo, String info){
+        final Dialog dialog = new Dialog(Tappa1Activity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialoglayout);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        LinearLayout btnDismiss = (LinearLayout)dialog.getWindow().findViewById(R.id.dismiss);
+        TextView Ttitolo = (TextView)dialog.getWindow().findViewById(R.id.Ttitolo);
+        Ttitolo.setText(titolo);
+        TextView Tinfo = (TextView)dialog.getWindow().findViewById(R.id.Tinfo);
+        Tinfo.setText(info);
+        btnDismiss.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }});
+
+        dialog.show();
     }
 
 }

@@ -22,6 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     private ImageView image2;
     private PopupWindow pwindo;
     private String msg1, msg2, msg3;
-    Button btnClose;
+    LinearLayout btnClose;
     Animation animationFadeIn, animationFadeOut;
     @ColorInt
     public static final int LIME        = 0xFF800000;
@@ -108,7 +109,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
             pwindo = new PopupWindow(layout, 900, 400, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
-            btnClose = (Button) layout.findViewById(R.id.btn_close);
+            btnClose = (LinearLayout) layout.findViewById(R.id.popup_element);
             TextView timeFinished = (TextView) layout.findViewById(R.id.select_time);
             switch (j){
                 case 1:
@@ -262,5 +263,6 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     {
         Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
     }
+
 
 }

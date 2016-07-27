@@ -1,16 +1,25 @@
 <resources>
     <string name="app_name">Discover Palermo</string>
 
+    <string name="kursaal">KURSAAL BIONDO</string>
+    <string name="kursaal_info">Lo storico edificio, progettato da Ernesto Basile nel 1913.</string>
+    <string name="valdese">CHIESA VALDESE</string>
+    <string name="valdese_info">La chiesa fu costruita nel 1927 e presenta una facciata in stile neogotico. Il progettista fu l\'arch. Decker e nel disegnare la facciata si
+    ispirò alla quattrocentesca chiesa di Santa Maria della Catena sul Cassaro.</string>
+
+    <string name="raggiunto">Hai già raggiunto la destinazione? \n\n Affrettati! Restano solo 3 minuti per raggiungere la destinazione..</string>
+    <string name="terminato">Il tempo di percorrenza a tua disposizione e\' terminato\n Hai gia\' raggiunto il monumento? \n Se non sei ancora arrivato, non preoccuparti, stai utilizzando
+    le ore extra</string>
     <string name="free_tour">FREE TOUR</string>
     <string name="discover">DISCOVERY</string>
     <string name="choose_mode">Scegli la modalita\'</string>
     <string name="choose_hours">Seleziona le ore</string>
     <string name="choose_lang">Scegli la lingua</string>
-    <string name="benvenuto">Benvenuto |</string>
-    <string name="welcome">Welcome |</string>
-    <string name="bienvenue">Bienvenue |</string>
-    <string name="wilkomme">Wilkomme |</string>
-    <string name="bienvenida">Bienvenida |</string>
+    <string name="benvenuto">Benvenuto</string>
+    <string name="welcome">Welcome</string>
+    <string name="bienvenue">Bienvenue</string>
+    <string name="wilkomme">Wilkomme</string>
+    <string name="bienvenida">Bienvenida</string>
     <string name="yokkoso">Yokkoso</string>
     <string name="two">2</string>
     <string name="four">4</string>
