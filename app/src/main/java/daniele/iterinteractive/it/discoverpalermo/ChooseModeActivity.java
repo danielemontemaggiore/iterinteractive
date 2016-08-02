@@ -101,7 +101,9 @@ public class ChooseModeActivity extends Activity {
                     ChooseModeActivity.this.startActivity(freeTourIntent);
                     break;
                 case R.id.discovery_layout:
-                    initiatePopupWindow();
+                    //initiatePopupWindow();
+                    Intent start2Hrs = new Intent(ChooseModeActivity.this, Tappa1Activity.class);
+                    ChooseModeActivity.this.startActivity(start2Hrs);
                     break;
             }
 
