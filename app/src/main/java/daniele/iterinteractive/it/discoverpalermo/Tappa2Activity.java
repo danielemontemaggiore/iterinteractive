@@ -7,20 +7,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.media.MediaPlayer;
+import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.annotation.ColorInt;
 import android.util.Log;
-import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -29,48 +26,28 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-public class Discovery1Activity extends Activity implements View.OnTouchListener
+public class Tappa2Activity extends Activity implements View.OnTouchListener
 {
-    // VISITA POLITEAMA : DURATA 9 MINUTI - 2 MINUTI DI PREAVVISO = 7 MINUTI
-    private Discovery1Activity.MalibuCountDownTimer countDownTimer;
+    // TRAGITTO PORTO -> POLITEAMA : DURATA 11 MINUTI - 2 MINUTI DI PREAVVISO = 9 MINUTI
+    private Tappa2Activity.MalibuCountDownTimer countDownTimer;
 
-    private final long startTime = 100000; // TODO :  DA CORREGGERE CON 7000000
+    private final long startTime = 20000;       // TODO :  DA CORREGGERE CON 9000000
     private final long interval = 1000;
-    private final long notice = 5000;     // TODO : DA CORREGGERE CON 2000000
-    private TextView time_remaining;
+    private final long notice = 5000;           // TODO : DA CORREGGERE CON 3000000
     private int i=0;
-    private ImageView image2;
+    private TextView time_remaining;
+    private Typeface Windlass;
+
     private PopupWindow pwindo;
-    private String msg1, msg2, msg3;
     LinearLayout btnClose;
-    Animation animationFadeIn, animationFadeOut;
-    @ColorInt
-    public static final int LIME        = 0xFF800000;
-
-
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discovery1);
+        setContentView(R.layout.activity_tappa1);
 
+        Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         time_remaining = (TextView) findViewById(R.id.time_remaining);
-        countDownTimer = new Discovery1Activity.MalibuCountDownTimer(startTime-notice, interval);
+        countDownTimer = new Tappa2Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
-
-        image2 = (ImageView)findViewById(R.id.image2);
-        image2.setBackgroundResource(R.drawable.politeama1867);
-            animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
-            animationFadeOut = AnimationUtils.loadAnimation(this, R.anim.fadeout);
-        image2.startAnimation(animationFadeIn);
-
-
-        msg1= getResources().getString(R.string.time_finished1);
-        msg2= getResources().getString(R.string.time_finished2);
-        msg3= getResources().getString(R.string.time_finished3);
-
-
-
-        Dialog dialog = new Dialog(new ContextThemeWrapper(this, R.style.DialogSlideAnim));
-        dialog.setTitle("Title...");
 
         ImageView iv = (ImageView) findViewById (R.id.image);
         if (iv != null) {
@@ -78,6 +55,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         }
     }
 
+    // CountDownTimer class
     public class MalibuCountDownTimer extends CountDownTimer
     {
 
@@ -91,32 +69,34 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         {
             i++;
             initiatePopupWindow(i);
-
         }
 
         @Override
         public void onTick(long millisUntilFinished)
         {
+            time_remaining.setTypeface(Windlass);
             time_remaining.setText("" + TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) +" : " + (TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)%60));
+
         }
     }
 
     private void initiatePopupWindow(int j) {
         try {
 
-            LayoutInflater inflater = (LayoutInflater) Discovery1Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) Tappa2Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_time_finished,(ViewGroup) findViewById(R.id.popup_element));
             pwindo = new PopupWindow(layout, 500, 300, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
             btnClose = (LinearLayout) layout.findViewById(R.id.popup_element);
             TextView timeFinished = (TextView) layout.findViewById(R.id.select_time);
+            timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
-                    timeFinished.setText(msg1+" 2 "+msg2);
+                    timeFinished.setText(getResources().getString(R.string.raggiunto));
                     break;
                 case 2:
-                    timeFinished.setText(msg3);
+                    timeFinished.setText(getResources().getString(R.string.terminato));
                     break;
             }
 
@@ -126,13 +106,17 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                     switch (finalI){
                         case 1:
                             pwindo.dismiss();
-                            countDownTimer = new Discovery1Activity.MalibuCountDownTimer(notice, interval);
+                            //toast(Integer.toString(finalI));
+                            countDownTimer = new Tappa2Activity.MalibuCountDownTimer(notice, interval);
                             countDownTimer.start();
                             break;
                         case 2:
                             pwindo.dismiss();
                             break;
                     }
+
+
+
                 }
             });
 
@@ -159,15 +143,20 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         // We do this when the default image is showing. That condition is detectable by looking at the
         // tag of the view. If it is null or contains the resource number of the default image, display the pressed image.
         Integer tagNum = (Integer) imageView.getTag ();
-        int currentResource = (tagNum == null) ? R.drawable.politeama_screen : tagNum.intValue ();
+        int currentResource = (tagNum == null) ? R.drawable.mappa1 : tagNum.intValue ();
 
         // Now that we know the current resource being displayed we can handle the DOWN and UP events.
 
         switch (action) {
             case MotionEvent.ACTION_DOWN :
-                if (currentResource == R.drawable.politeama_screen) {
-                    nextImage = R.drawable.politeama_screen;
+                if (currentResource == R.drawable.mappa1) {
+                    nextImage = R.drawable.mappa1;
                     handledHere = true;
+       /*
+       } else if (currentResource != R.drawable.p2_ship_default) {
+         nextImage = R.drawable.p2_ship_default;
+         handledHere = true;
+       */
                 } else handledHere = true;
                 break;
 
@@ -184,45 +173,26 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                 // varying pixel density.
                 ColorTool ct = new ColorTool ();
                 int tolerance = 25;
-                nextImage = R.drawable.politeama_screen;
-                if (ct.closeMatch (Color.LTGRAY, touchColor, tolerance)) {                        // LIGHTGRAY
-                    image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1867);
-                    image2.startAnimation(animationFadeIn);
+                nextImage = R.drawable.mappa1;
+                if (ct.closeMatch (Color.RED, touchColor, tolerance)) {
+                    //nextImage = R.drawable.mappa1;
+                    //toast("Hai cliccato sul Teatro Politeama");
+                    Intent viewDetailIntent = new Intent(Tappa2Activity.this, Discovery1Activity.class);
+                    Tappa2Activity.this.startActivity(viewDetailIntent);
                 }
-                else if (ct.closeMatch (Color.parseColor("#008081"), touchColor, tolerance)) {   // TEAL
-                    image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1874);
-                    image2.startAnimation(animationFadeIn);
+                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) {
+                    // L'utente ha cliccato sul Kursaal Biondo
+                    openDialog(getResources().getString(R.string.kursaal),getResources().getString(R.string.kursaal_info));
                 }
-                else if (ct.closeMatch (Color.parseColor("#7B8101"), touchColor, tolerance)) {    // OLIVE
-                    image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1877);
-                    image2.startAnimation(animationFadeIn);
+                else if (ct.closeMatch (Color.GREEN, touchColor, tolerance)) {
+                    // L'utente ha cliccato sul Kursaal Biondo
+                    openDialog(getResources().getString(R.string.valdese),getResources().getString(R.string.valdese_info));
                 }
-                else if (ct.closeMatch (Color.parseColor("#800000"), touchColor, tolerance)) {    // MAROON
-                    image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1891);
-                    image2.startAnimation(animationFadeIn);
-                }
-                else if (ct.closeMatch (Color.parseColor("#FF7F27"), touchColor, tolerance)) {    // ORANGE
-                    image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1910);
-                    image2.startAnimation(animationFadeIn);
-                }
-                else if (ct.closeMatch (Color.BLUE, touchColor, tolerance)) {                     // PAPPAGALLO
-                // TODO : deve parlare il pappagallo (deve dare l'aiuto)
-                //toast("Il pappagallo parlerà..");
-                    MediaPlayer mPlayer = MediaPlayer.create(Discovery1Activity.this, R.raw.coldplay);
-                    mPlayer.start();
-                }
-                else if (ct.closeMatch (Color.parseColor("#712B2B"), touchColor, tolerance)) {    // PROSSIMA TAPPA
-                    Intent prossimaTappa = new Intent(Discovery1Activity.this, Tappa2Activity.class);
-                    Discovery1Activity.this.startActivity(prossimaTappa);
-                }
+                else
+                    toast("Non Hai cliccato sul Teatro Politeama");
 
                 if (currentResource == nextImage) {
-                    nextImage = R.drawable.politeama_screen;
+                    nextImage = R.drawable.mappa1;
                 }
                 handledHere = true;
                 break;
@@ -268,5 +238,25 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
     }
 
+    private void openDialog(String titolo, String info){
+        final Dialog dialog = new Dialog(Tappa2Activity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialoglayout);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        LinearLayout btnDismiss = (LinearLayout)dialog.getWindow().findViewById(R.id.dismiss);
+        TextView Ttitolo = (TextView)dialog.getWindow().findViewById(R.id.Ttitolo);
+        Ttitolo.setText(titolo);
+        TextView Tinfo = (TextView)dialog.getWindow().findViewById(R.id.Tinfo);
+        Tinfo.setText(info);
+        btnDismiss.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }});
+
+        dialog.show();
+    }
 
 }

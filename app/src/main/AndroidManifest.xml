@@ -34,8 +34,6 @@
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme"
             android:noHistory="true">
-
-
         </activity>
         <activity
             android:name=".Discovery1Activity"
@@ -43,9 +41,21 @@
             android:label="@string/title_activity_discovery1"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
-
-
-
+        </activity>
+        <activity
+            android:name=".Tappa2Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_single_map"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme"
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".Discovery2Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_discovery1"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
         </activity>
     </application>
 

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EE000000"
     android:orientation="vertical"
     tools:context=".ChooseModeActivity"
+    android:background="@drawable/pergamena_dialog"
     >
 
     <TextView
@@ -16,9 +16,10 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center_horizontal" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="15dp"/>
 
 
 </LinearLayout>

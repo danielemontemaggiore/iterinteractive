@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -29,10 +28,10 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-public class Discovery1Activity extends Activity implements View.OnTouchListener
+public class Discovery2Activity extends Activity implements View.OnTouchListener
 {
     // VISITA POLITEAMA : DURATA 9 MINUTI - 2 MINUTI DI PREAVVISO = 7 MINUTI
-    private Discovery1Activity.MalibuCountDownTimer countDownTimer;
+    private Discovery2Activity.MalibuCountDownTimer countDownTimer;
 
     private final long startTime = 100000; // TODO :  DA CORREGGERE CON 7000000
     private final long interval = 1000;
@@ -53,7 +52,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         setContentView(R.layout.activity_discovery1);
 
         time_remaining = (TextView) findViewById(R.id.time_remaining);
-        countDownTimer = new Discovery1Activity.MalibuCountDownTimer(startTime-notice, interval);
+        countDownTimer = new Discovery2Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
 
         image2 = (ImageView)findViewById(R.id.image2);
@@ -104,7 +103,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     private void initiatePopupWindow(int j) {
         try {
 
-            LayoutInflater inflater = (LayoutInflater) Discovery1Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) Discovery2Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_time_finished,(ViewGroup) findViewById(R.id.popup_element));
             pwindo = new PopupWindow(layout, 500, 300, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
@@ -126,7 +125,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                     switch (finalI){
                         case 1:
                             pwindo.dismiss();
-                            countDownTimer = new Discovery1Activity.MalibuCountDownTimer(notice, interval);
+                            countDownTimer = new Discovery2Activity.MalibuCountDownTimer(notice, interval);
                             countDownTimer.start();
                             break;
                         case 2:
@@ -213,12 +212,13 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                 else if (ct.closeMatch (Color.BLUE, touchColor, tolerance)) {                     // PAPPAGALLO
                 // TODO : deve parlare il pappagallo (deve dare l'aiuto)
                 //toast("Il pappagallo parlerà..");
-                    MediaPlayer mPlayer = MediaPlayer.create(Discovery1Activity.this, R.raw.coldplay);
+                    MediaPlayer mPlayer = MediaPlayer.create(Discovery2Activity.this, R.raw.coldplay);
                     mPlayer.start();
                 }
-                else if (ct.closeMatch (Color.parseColor("#712B2B"), touchColor, tolerance)) {    // PROSSIMA TAPPA
-                    Intent prossimaTappa = new Intent(Discovery1Activity.this, Tappa2Activity.class);
-                    Discovery1Activity.this.startActivity(prossimaTappa);
+                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) {                   // PROSSIMA TAPPA
+                    // TODO : deve puntare al prossimo percorso
+                    Intent viewDetailIntent = new Intent(Discovery2Activity.this, Discovery2Activity.class);
+                    Discovery2Activity.this.startActivity(viewDetailIntent);
                 }
 
                 if (currentResource == nextImage) {
