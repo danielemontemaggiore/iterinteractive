@@ -26,10 +26,10 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-public class Tappa2Activity extends Activity implements View.OnTouchListener
+public class Tappa3Activity extends Activity implements View.OnTouchListener
 {
     // TRAGITTO POLITEAMA -> MASSIMO : DURATA 11 MINUTI - 2 MINUTI DI PREAVVISO = 9 MINUTI
-    private Tappa2Activity.MalibuCountDownTimer countDownTimer;
+    private Tappa3Activity.MalibuCountDownTimer countDownTimer;
 
     private final long startTime = 20000;       // TODO :  DA CORREGGERE CON 9000000
     private final long interval = 1000;
@@ -46,7 +46,7 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
 
         Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         time_remaining = (TextView) findViewById(R.id.time_remaining);
-        countDownTimer = new Tappa2Activity.MalibuCountDownTimer(startTime-notice, interval);
+        countDownTimer = new Tappa3Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
 
         ImageView iv = (ImageView) findViewById (R.id.image);
@@ -83,7 +83,7 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
     private void initiatePopupWindow(int j) {
         try {
 
-            LayoutInflater inflater = (LayoutInflater) Tappa2Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) Tappa3Activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.activity_time_finished,(ViewGroup) findViewById(R.id.popup_element));
             pwindo = new PopupWindow(layout, 500, 300, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
@@ -107,13 +107,16 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
                         case 1:
                             pwindo.dismiss();
                             //toast(Integer.toString(finalI));
-                            countDownTimer = new Tappa2Activity.MalibuCountDownTimer(notice, interval);
+                            countDownTimer = new Tappa3Activity.MalibuCountDownTimer(notice, interval);
                             countDownTimer.start();
                             break;
                         case 2:
                             pwindo.dismiss();
                             break;
                     }
+
+
+
                 }
             });
 
@@ -140,13 +143,13 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
         // We do this when the default image is showing. That condition is detectable by looking at the
         // tag of the view. If it is null or contains the resource number of the default image, display the pressed image.
         Integer tagNum = (Integer) imageView.getTag ();
-        int currentResource = (tagNum == null) ? R.drawable.mappa2 : tagNum.intValue ();
+        int currentResource = (tagNum == null) ? R.drawable.mappa1 : tagNum.intValue ();
 
         // Now that we know the current resource being displayed we can handle the DOWN and UP events.
 
         switch (action) {
             case MotionEvent.ACTION_DOWN :
-                if (currentResource == R.drawable.mappa2) {
+                if (currentResource == R.drawable.mappa1) {
                     nextImage = R.drawable.mappa2;
                     handledHere = true;
        /*
@@ -172,43 +175,22 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
                 int tolerance = 25;
                 nextImage = R.drawable.mappa2;
                 if (ct.closeMatch (Color.parseColor("#0070FA"), touchColor, tolerance) || ct.closeMatch (Color.parseColor("#006FF9"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sul Teatro Massimo
-                    toast("Hai cliccato sul Massimo");
-                   // Intent viewDetailIntent = new Intent(Tappa2Activity.this, Discovery2Activity.class);
-                //    Tappa2Activity.this.startActivity(viewDetailIntent);
+                    Intent viewDetailIntent = new Intent(Tappa3Activity.this, Discovery1Activity.class);
+                    Tappa3Activity.this.startActivity(viewDetailIntent);
                 }
-                else if (ct.closeMatch (Color.parseColor("#FA0001"), touchColor, tolerance)) {
+                else if (ct.closeMatch (Color.YELLOW, touchColor, tolerance)) {
                     // L'utente ha cliccato sul Kursaal Biondo
                     openDialog(getResources().getString(R.string.kursaal),getResources().getString(R.string.kursaal_info));
                 }
-                else if (ct.closeMatch (Color.parseColor("#2300FA"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sulla Chiesa Anglicana
-                    openDialog(getResources().getString(R.string.chiesa_anglicana),getResources().getString(R.string.chiesa_anglicana_info));
+                else if (ct.closeMatch (Color.GREEN, touchColor, tolerance)) {
+                    // L'utente ha cliccato sul Kursaal Biondo
+                    openDialog(getResources().getString(R.string.valdese),getResources().getString(R.string.valdese_info));
                 }
-                else if (ct.closeMatch (Color.parseColor("#00CDFA"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sulla Parrocchia di SS. Pietro e Paolo Apostoli
-                    openDialog(getResources().getString(R.string.parrocchia_pietro_paolo),getResources().getString(R.string.parrocchia_pietro_paolo_info));
-                }
-                else if (ct.closeMatch (Color.parseColor("#85F587"), touchColor, tolerance) || ct.closeMatch (Color.parseColor("#84D7F5"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sui chioschi del Teatro Massimo
-                    openDialog(getResources().getString(R.string.chioschi_ribaudo),getResources().getString(R.string.chioschi_ribaudo_info));
-                }
-                else if (ct.closeMatch (Color.parseColor("#1DFA38"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sulla Chiesa di Sant' Ignazio all'Olivella
-                    openDialog(getResources().getString(R.string.chiesa_san_ignazio),getResources().getString(R.string.chiesa_san_ignazio_info));
-                }
-                else if (ct.closeMatch (Color.parseColor("#F98700"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sul Museo Salinas
-                    openDialog(getResources().getString(R.string.museo_salinas),getResources().getString(R.string.museo_salinas_info));
-                }
-                else if (ct.closeMatch (Color.parseColor("#881179"), touchColor, tolerance)) {
-                    // L'utente ha cliccato sulle Poste
-                    openDialog(getResources().getString(R.string.edificio_poste),getResources().getString(R.string.edificio_poste_info));
-                }
-
+                else
+                    toast("Non Hai cliccato sul Teatro Politeama");
 
                 if (currentResource == nextImage) {
-                    nextImage = R.drawable.mappa2;
+                    nextImage = R.drawable.mappa1;
                 }
                 handledHere = true;
                 break;
@@ -255,7 +237,7 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
     }
 
     private void openDialog(String titolo, String info){
-        final Dialog dialog = new Dialog(Tappa2Activity.this);
+        final Dialog dialog = new Dialog(Tappa3Activity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialoglayout);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

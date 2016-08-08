@@ -5,7 +5,52 @@
     <string name="kursaal_info">Lo storico edificio, progettato da Ernesto Basile nel 1913.</string>
     <string name="valdese">CHIESA VALDESE</string>
     <string name="valdese_info">La chiesa fu costruita nel 1927 e presenta una facciata in stile neogotico. Il progettista fu l\'arch. Decker e nel disegnare la facciata si
-    ispirò alla quattrocentesca chiesa di Santa Maria della Catena sul Cassaro.</string>
+        ispirò alla quattrocentesca chiesa di Santa Maria della Catena sul Cassaro.</string>
+    <string name="chiesa_anglicana">CHIESA ANGLICANA</string>
+    <string name="chiesa_anglicana_info">Durante il XIX secolo la presenza inglese a Palermo era molto ricca, infatti molti imprenditori decisero di trasferirsi dall\'Inghilterra
+        alla Sicilia investendo su di essa. In questo periodo comparve a Palermo la religione anglicana e nel 1872 venne iniziata la costruzione della Chiesa che
+        venne terminata nel 1875.</string>
+    <string name="parrocchia_pietro_paolo">PARROCCHIA SS. PIETRO E PAOLO</string>
+    <string name="parrocchia_pietro_paolo_info">La chiesa è stata dal 1880 al 1940 cappella del vicino monastero benedettino; dal 1941, essendosi ridotto il numero
+        delle monache, è stata ceduta all\'arcidiocesi, divenendo parrocchia.
+        La facciata comprende tre ingressi ad archi a sesto acuto in stile romanico. L\'altare centrale e quelli laterali sono stati decorati fin dalla costruzione dal
+        pittore G. La Manna.\n\n
+        <b>Apertura al pubblico:</b>\n\n
+        Giorni feriali: dalle 8:00 alle 12:00 e dalle 16:00 alle 20:45\n
+        Domenica e festivi: dalle 8:00 alle 12:30 e dalle 18:30 alle 21:30
+    </string>
+    <string name="chioschi_ribaudo">CHIOSCO RIBAUDO</string>
+    <string name="chioschi_ribaudo_info">Realizzato da Ernesto Basile nel 1887, fu ideato in stretto rapporto con la cornice Liberty del Teatro Massimo, davanti al
+        quale fu posizionato. Molto particolare per l\'unione del ferro battuto alla lavoratura, per gli elementi decorativi in stile liberty e per gli interessanti
+        accostamenti cromatici.\n
+        Da notare l\'utilizzo del marmo di Billiemi e la cupoletta ottogonale tipica delle torri brasiliane, a ricordo del passaggio di Basile in terra carioca.\n
+        I chioschi in origine erano utilizzati per la vendita dei biglietti di accesso al Teatro Massimo e per la vendita di bevande refrigeranti.
+    </string>
+    <string name="chiesa_san_ignazio">CHIESA DI SAN IGNAZIO</string>
+    <string name="chiesa_san_ignazio_info">Eretta tra il 1598 e il 1622 e finita nel 1732 ha una grandiosa facciata barocca con tre portali e due campanili. L\’interno
+        è composto da tre navate e cappelle laterali, di certo valore è il pavimento di marmi colorati. L\’altare è sormontato da un dipinto raffigurante il Trionfo
+        della Morte e due sculture rappresentanti i Santi Pietro e Paolo. La Cappella del Crocifisso è decorata da pietre preziose e marmi. All\’interno della Chiesa
+        sono conservate opere di artisti quali Marabitti e Pietro Novelli.\n\n
+        Apertura al pubblico:\n
+        Lunedì, martedì, giovedì e sabato: dalle ore 7:00 alle ore 10:00 e dalle ore 17:00 alle ore 20:00.\n
+        Mercoledì: dalle ore 7:00 alle ore 8.00 e dalle 17:00 alle 20:00.\n
+        Domenica e festivi: 9:00-13:00.
+    </string>
+    <string name="museo_salinas">MUSEO SALINAS</string>
+    <string name="museo_salinas_info">Il complesso architettonico venne iniziato sul finire del XVI secolo su progetto dell\'architetto Antonio Muttone per la Casa dei
+        Padri della Congregazione di San Filippo Neri; l\'edificio fu completato nel XVII secolo. Il complesso monumentale include, oltre al museo, la chiesa di
+        Sant\'Ignazio e l\'Oratorio di San Filippo Neri. A seguito della legge sulla soppressione degli ordini religiosi del 1866, l\'edificio, confiscato alla
+        Congregazione, divenne sede del museo nazionale.\n
+        Il Museo possiede una delle più ricche collezioni d\'arte punica e greca d\'Italia, nonché testimonianze di gran parte della storia siciliana.
+    </string>
+    <string name="edificio_poste">PALAZZO DELLE POSTE</string>
+    <string name="edificio_poste_info">Venne progettato dall\'architetto Angiolo Mazzoni nei primi anni venti del XX secolo. I lavori iniziarono nel 1929 e l\'inaugurazione
+        avvenne il 28 ottobre 1934, alla presenza del ministro delle Comunicazioni Umberto Puppini. Danneggiato da un incendio nel 1988, vi sono stati eseguiti lavori
+        di restauro.
+    </string>
+
+
+
 
     <string name="raggiunto">Hai già raggiunto la destinazione? \n\n Affrettati! Restano solo 3 minuti per raggiungere la destinazione..</string>
     <string name="terminato">Il tempo di percorrenza a tua disposizione e\' terminato\n\n Hai gia\' raggiunto il monumento? \n Se non sei ancora arrivato, non preoccuparti, stai utilizzando

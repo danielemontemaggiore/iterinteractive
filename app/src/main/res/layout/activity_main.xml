@@ -49,13 +49,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="60dp"
                 >
 
                 <ImageView
                     android:id="@+id/uk_flag"
                     android:layout_width="280dp"
                     android:layout_height="140dp"
-                    android:layout_marginLeft="60dp"
+
                     android:scaleType="fitXY"
                     android:src="@drawable/uk" />
 
@@ -76,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="60dp"
                 >
 
                 <ImageView
@@ -83,7 +85,6 @@
                     android:layout_width="280dp"
                     android:layout_height="140dp"
                     android:scaleType="fitXY"
-                    android:layout_marginLeft="60dp"
                     android:src="@drawable/france" />
 
                 <TextView
@@ -143,6 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginLeft="60dp"
             >
 
             <ImageView
@@ -150,7 +152,6 @@
                 android:layout_width="280dp"
                 android:layout_height="140dp"
                 android:scaleType="fitXY"
-                android:layout_marginLeft="60dp"
                 android:src="@drawable/nippon" />
 
 
@@ -173,6 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginLeft="60dp"
             >
 
             <ImageView
@@ -180,7 +182,6 @@
                 android:layout_width="280dp"
                 android:layout_height="140dp"
                 android:scaleType="fitXY"
-                android:layout_marginLeft="60dp"
                 android:src="@drawable/spain" />
 
             <TextView
