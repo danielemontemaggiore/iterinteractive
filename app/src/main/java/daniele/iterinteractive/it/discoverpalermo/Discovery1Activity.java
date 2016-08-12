@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -44,6 +45,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     private String msg1, msg2, msg3;
     LinearLayout btnClose;
     Animation animationFadeIn, animationFadeOut;
+    private Typeface Windlass;
     @ColorInt
     public static final int LIME        = 0xFF800000;
 
@@ -52,7 +54,9 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discovery1);
 
+        Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         time_remaining = (TextView) findViewById(R.id.time_remaining);
+        time_remaining.setTypeface(Windlass);
         countDownTimer = new Discovery1Activity.MalibuCountDownTimer(startTime-notice, interval);
         countDownTimer.start();
 
@@ -97,6 +101,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         @Override
         public void onTick(long millisUntilFinished)
         {
+            time_remaining.setTypeface(Windlass);
             time_remaining.setText("" + TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) +" : " + (TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)%60));
         }
     }
@@ -111,6 +116,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
 
             btnClose = (LinearLayout) layout.findViewById(R.id.popup_element);
             TextView timeFinished = (TextView) layout.findViewById(R.id.select_time);
+            timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
                     timeFinished.setText(msg1+" 2 "+msg2);

@@ -18,27 +18,26 @@
         android:id="@+id/image"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:src="@drawable/politeama_screen"
         />
 
     <ImageView
         android:id="@+id/image2"
-        android:layout_width="880dp"
-        android:layout_height="500dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="50dp"
-        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/politeama1867"
         />
 
     <TextView
         android:id="@+id/time_remaining"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="629dp"
-        android:layout_marginLeft="73dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginLeft="16dp"
         android:gravity="center"
-        android:textSize="26sp"
+        android:textSize="22sp"
         android:textColor="@color/black"
         />
 
