@@ -196,7 +196,7 @@ public class Discovery3Activity extends Activity implements View.OnTouchListener
                 }
                 else if (ct.closeMatch (Color.parseColor("#7B8101"), touchColor, tolerance)) {    // OLIVE
                     image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1877);
+                    image2.setBackgroundResource(R.drawable.politeama1874);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#800000"), touchColor, tolerance)) {    // MAROON

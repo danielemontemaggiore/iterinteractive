@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     >
 
-
     <ImageView
         android:id="@+id/image_areas"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:src="@drawable/discovery_sensibili"
         android:visibility="invisible"
         />
@@ -27,8 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:background="@drawable/politeama1867"
         />
+
+    <ImageView
+        android:id="@+id/bussola"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="1230dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bussola"
+        android:scaleType="fitXY"
+        />
+
 
     <TextView
         android:id="@+id/time_remaining"
@@ -40,8 +49,5 @@
         android:textSize="22sp"
         android:textColor="@color/black"
         />
-
-
-
 
 </FrameLayout>

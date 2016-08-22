@@ -192,26 +192,31 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                 int tolerance = 25;
                 nextImage = R.drawable.politeama_screen;
                 if (ct.closeMatch (Color.LTGRAY, touchColor, tolerance)) {                        // LIGHTGRAY
+                    click_sound();
                     image2.startAnimation(animationFadeOut);
                     image2.setBackgroundResource(R.drawable.politeama1867);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#008081"), touchColor, tolerance)) {   // TEAL
+                    click_sound();
                     image2.startAnimation(animationFadeOut);
                     image2.setBackgroundResource(R.drawable.politeama1874);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#7B8101"), touchColor, tolerance)) {    // OLIVE
+                    click_sound();
                     image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1877);
+                    image2.setBackgroundResource(R.drawable.politeama1874);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#800000"), touchColor, tolerance)) {    // MAROON
+                    click_sound();
                     image2.startAnimation(animationFadeOut);
                     image2.setBackgroundResource(R.drawable.politeama1891);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#FF7F27"), touchColor, tolerance)) {    // ORANGE
+                    click_sound();
                     image2.startAnimation(animationFadeOut);
                     image2.setBackgroundResource(R.drawable.politeama1910);
                     image2.startAnimation(animationFadeIn);
@@ -268,11 +273,9 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
         }
     }
 
-
-    public void toast (String msg)
-    {
-        Toast.makeText (getApplicationContext(), msg, Toast.LENGTH_LONG).show ();
+    public void click_sound(){
+        MediaPlayer mPlayer = MediaPlayer.create(Discovery1Activity.this, R.raw.click_open_lighter);
+        mPlayer.start();
     }
-
 
 }
