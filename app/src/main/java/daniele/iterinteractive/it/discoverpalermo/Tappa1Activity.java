@@ -40,14 +40,12 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
     private TextView time_remaining;
     private Typeface Windlass;
     MediaPlayer mPlayer;
-
-
     private PopupWindow pwindo;
     LinearLayout btnClose;
+
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tappa1);
-
 
         Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");
         time_remaining = (TextView) findViewById(R.id.time_remaining);
@@ -98,12 +96,12 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
             timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
-                    mPlayer = MediaPlayer.create(Tappa1Activity.this, R.raw.preavviso_tempo_scaduto);  // todo: aggiustare il suono
+                    mPlayer = MediaPlayer.create(Tappa1Activity.this, R.raw.preavviso_tempo_scaduto);
                     mPlayer.start();
                     timeFinished.setText(getResources().getString(R.string.raggiunto));
                     break;
                 case 2:
-                    mPlayer = MediaPlayer.create(Tappa1Activity.this, R.raw.tempo_scaduto_small_blast);  // todo: aggiustare il suono
+                    mPlayer = MediaPlayer.create(Tappa1Activity.this, R.raw.tempo_scaduto_small_blast);
                     mPlayer.start();
                     timeFinished.setText(getResources().getString(R.string.terminato));
                     break;
@@ -115,7 +113,6 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
                     switch (finalI){
                         case 1:
                             pwindo.dismiss();
-                            //toast(Integer.toString(finalI));
                             countDownTimer = new Tappa1Activity.MalibuCountDownTimer(notice, interval);
                             countDownTimer.start();
                             break;
@@ -186,6 +183,7 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
                 if (ct.closeMatch (Color.RED, touchColor, tolerance)) {
                     //nextImage = R.drawable.mappa1;
                     //toast("Hai cliccato sul Teatro Politeama");
+                    finish();
                     Intent viewDetailIntent = new Intent(Tappa1Activity.this, Discovery1Activity.class);
                     Tappa1Activity.this.startActivity(viewDetailIntent);
                 }
@@ -266,6 +264,11 @@ public class Tappa1Activity extends Activity implements View.OnTouchListener
             }});
 
         dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        return;
     }
 
 }

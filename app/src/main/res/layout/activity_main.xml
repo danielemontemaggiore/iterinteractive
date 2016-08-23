@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/benvenuto"
                     android:textColor="@color/black"
-                    android:textSize="40sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:gravity="center_horizontal" />
 
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/welcome"
                     android:textColor="@color/black"
-                    android:textSize="40sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:gravity="center_horizontal" />
 
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/benvenuto"
                     android:textColor="@color/black"
-                    android:textSize="40sp"
+                    android:textSize="24sp"
                     android:layout_marginTop="20dp"
                     android:gravity="center_horizontal" />
 
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/wilkomme"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="24sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_horizontal" />
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/yokkoso"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="24sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_horizontal" />
@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bienvenida"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="24sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_horizontal" />

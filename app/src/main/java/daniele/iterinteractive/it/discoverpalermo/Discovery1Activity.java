@@ -46,6 +46,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     LinearLayout btnClose;
     Animation animationFadeIn, animationFadeOut;
     private Typeface Windlass;
+    MediaPlayer mPlayer;
     @ColorInt
     public static final int LIME        = 0xFF800000;
 
@@ -66,15 +67,9 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
             animationFadeOut = AnimationUtils.loadAnimation(this, R.anim.fadeout);
         image2.startAnimation(animationFadeIn);
 
-
         msg1= getResources().getString(R.string.time_finished1);
         msg2= getResources().getString(R.string.time_finished2);
         msg3= getResources().getString(R.string.time_finished3);
-
-
-
-        Dialog dialog = new Dialog(new ContextThemeWrapper(this, R.style.DialogSlideAnim));
-        dialog.setTitle("Title...");
 
         ImageView iv = (ImageView) findViewById (R.id.image);
         if (iv != null) {
@@ -119,9 +114,13 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
             timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
+                    mPlayer = MediaPlayer.create(Discovery1Activity.this, R.raw.preavviso_tempo_scaduto);
+                    mPlayer.start();
                     timeFinished.setText(msg1+" 2 "+msg2);
                     break;
                 case 2:
+                    mPlayer = MediaPlayer.create(Discovery1Activity.this, R.raw.tempo_scaduto_small_blast);
+                    mPlayer.start();
                     timeFinished.setText(msg3);
                     break;
             }
@@ -206,7 +205,7 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
                 else if (ct.closeMatch (Color.parseColor("#7B8101"), touchColor, tolerance)) {    // OLIVE
                     click_sound();
                     image2.startAnimation(animationFadeOut);
-                    image2.setBackgroundResource(R.drawable.politeama1874);
+                    image2.setBackgroundResource(R.drawable.politeama1877);
                     image2.startAnimation(animationFadeIn);
                 }
                 else if (ct.closeMatch (Color.parseColor("#800000"), touchColor, tolerance)) {    // MAROON

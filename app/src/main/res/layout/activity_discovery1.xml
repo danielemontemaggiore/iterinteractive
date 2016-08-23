@@ -30,9 +30,9 @@
 
     <ImageView
         android:id="@+id/bussola"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="1230dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="920dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bussola"
         android:scaleType="fitXY"
