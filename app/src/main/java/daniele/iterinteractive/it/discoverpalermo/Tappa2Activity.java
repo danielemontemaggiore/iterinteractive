@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -37,7 +38,7 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
     private int i=0;
     private TextView time_remaining;
     private Typeface Windlass;
-
+    MediaPlayer mPlayer;
     private PopupWindow pwindo;
     LinearLayout btnClose;
     @Override public void onCreate(Bundle savedInstanceState) {
@@ -93,9 +94,13 @@ public class Tappa2Activity extends Activity implements View.OnTouchListener
             timeFinished.setTypeface(Windlass);
             switch (j){
                 case 1:
+                    mPlayer = MediaPlayer.create(Tappa2Activity.this, R.raw.preavviso_tempo_scaduto);
+                    mPlayer.start();
                     timeFinished.setText(getResources().getString(R.string.raggiunto));
                     break;
                 case 2:
+                    mPlayer = MediaPlayer.create(Tappa2Activity.this, R.raw.tempo_scaduto_small_blast);
+                    mPlayer.start();
                     timeFinished.setText(getResources().getString(R.string.terminato));
                     break;
             }

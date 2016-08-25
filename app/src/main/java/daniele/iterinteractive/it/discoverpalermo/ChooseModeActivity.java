@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import java.util.Locale;
+
+import daniele.iterinteractive.it.discoverpalermo.util.LanguageHelper;
+
 public class ChooseModeActivity extends Activity {
 
     TextView string_choose, chooseMode;
@@ -22,24 +30,25 @@ public class ChooseModeActivity extends Activity {
     private PopupWindow pwindo;
     Button btnTwoHours, btnFourHours;
     Typeface Windlass;
-    SharedPreferences prefs;
+    SharedPreferences sharedpreferences;
     String language;
+    Context context;
+    Language languageClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = this;
+
+        sharedpreferences = getSharedPreferences("Language",
+                Context.MODE_PRIVATE);
+        language = sharedpreferences.getString("lang", "");
+        languageClass= new Language();
+        languageClass.setLocale(language, context);
+
         setContentView(R.layout.activity_choose_mode);
-/*
-        prefs = getSharedPreferences("preferences", MODE_PRIVATE);
-        language = prefs.getString("lang",null);
 
-        // TODO: DA TOGLIERE LA RIGA DI SOTTO!!!
-        language="it";
-        LanguageHelper.changeLocale(this.getResources(), language);
-*/
-
-        Language.setLocaleIt(ChooseModeActivity.this);
         string_choose = (TextView) findViewById(R.id.chooseMode);
         chooseMode = (TextView) findViewById(R.id.chooseMode);
 
@@ -109,4 +118,5 @@ public class ChooseModeActivity extends Activity {
 
         }
     };
+
 }

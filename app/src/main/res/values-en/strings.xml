@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Discover Palermo</string>
 
+    <string name="kursaal">KURSAAL BIONDO</string>
+    <string name="kursaal_info">The historic building, designed by Ernesto Basile in 1913.</string>
+    <string name="valdese">WALDENSIAN EVANGELICAL CHURCH</string>
+    <string name="valdese_info">The Church was founded 1927 and it has a neo-Gothic facade. The designer was the architect Decker and for designing the facade is
+        he inspired by the fifteenth-century church of Santa Maria della Catena on the Cassaro.</string>
+    <string name="chiesa_anglicana">ANGLICAN CHURCH</string>
+
+
+
+
     <string name="free_tour">FREE TOUR</string>
     <string name="discover">DISCOVERY</string>
     <string name="choose_mode">Choose mode</string>

@@ -1,35 +1,21 @@
 package daniele.iterinteractive.it.discoverpalermo;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
 import java.util.Locale;
 
 /**
- * Created by Daniele on 29/03/2016.
+ * Created by Sviluppo on 25/08/2016.
  */
-public class Language extends Application {
+public class Language {
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
-
-    public static void setLocaleIt (Context context){
-        Locale locale = new Locale("it");
+    public void setLocale(String lang, Context context) {
+        Locale locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        context.getApplicationContext().getResources().updateConfiguration(config, null);
+        context.getResources().updateConfiguration(config,
+                context.getResources().getDisplayMetrics());
     }
-
-    public static void setLocaleEn (Context context){
-        Locale locale = new Locale("en_US");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        context.getApplicationContext().getResources().updateConfiguration(config, null);
-    }
-
 }

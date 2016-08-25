@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -49,10 +50,23 @@ public class Discovery1Activity extends Activity implements View.OnTouchListener
     MediaPlayer mPlayer;
     @ColorInt
     public static final int LIME        = 0xFF800000;
+    SharedPreferences sharedpreferences;
+    String language;
+    Context context;
+    Language languageClass;
 
 
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        context = this;
+
+        sharedpreferences = getSharedPreferences("Language",
+                Context.MODE_PRIVATE);
+        language = sharedpreferences.getString("lang", "");
+        languageClass= new Language();
+        languageClass.setLocale(language, context);
+
         setContentView(R.layout.activity_discovery1);
 
         Windlass = Typeface.createFromAsset(getAssets(), "fonts/Windlass.ttf");

@@ -38,6 +38,16 @@
         android:scaleType="fitXY"
         />
 
+    <ImageView
+        android:id="@+id/pappagallo"
+        android:layout_width="80dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="950dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/parrot"
+        android:scaleType="fitXY"
+        />
+
 
     <TextView
         android:id="@+id/time_remaining"

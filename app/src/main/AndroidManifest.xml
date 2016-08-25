@@ -22,14 +22,14 @@
         </activity>
         <activity
             android:name=".ChooseModeActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:label="@string/title_activity_choose_mode"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
             android:name=".Tappa1Activity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:label="@string/title_activity_single_map"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme"
@@ -37,14 +37,14 @@
         </activity>
         <activity
             android:name=".Discovery1Activity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:label="@string/title_activity_discovery1"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
             android:name=".Tappa2Activity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:label="@string/title_activity_single_map"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme"
@@ -52,7 +52,7 @@
         </activity>
         <activity
             android:name=".Discovery2Activity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:label="@string/title_activity_discovery1"
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
